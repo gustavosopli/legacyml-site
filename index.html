@@ -1,342 +1,281 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Legacy | Desenvolvimento de Talentos</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Legacy</title>
 
 <style>
+
 :root{
-  --navy:#061426;
-  --navy2:#0b1f38;
-  --gold:#d89a32;
-  --gold2:#f2b24b;
-  --white:#ffffff;
-  --muted:#c9d3df;
+--azul:#06162b;
+--azul2:#0a2340;
+--dourado:#d89a32;
+--branco:#ffffff;
+--cinza:#d6dce5;
 }
 
-*{box-sizing:border-box}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:var(--navy);
-  color:var(--white);
+font-family:Arial, Helvetica, sans-serif;
+background:var(--azul);
+color:white;
 }
 
 header{
-  background:linear-gradient(90deg,#061426,#0b1f38);
-  border-bottom:1px solid rgba(255,255,255,.12);
-  padding:24px 7%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+background:linear-gradient(90deg,var(--azul),var(--azul2));
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-.logo{
-  font-size:42px;
-  font-weight:700;
-  letter-spacing:4px;
+header img{
+height:58px;
 }
-
-.logo span{color:var(--gold)}
 
 nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:34px;
-  font-weight:700;
-  font-size:14px;
+color:white;
+text-decoration:none;
+margin-left:32px;
+font-weight:700;
+font-size:14px;
 }
 
-.btn-outline{
-  border:1px solid var(--gold);
-  padding:12px 18px;
-  border-radius:6px;
-  color:var(--gold);
+nav a.botao{
+border:1px solid var(--dourado);
+padding:12px 18px;
+border-radius:7px;
+color:var(--dourado);
 }
 
 .hero{
-  min-height:620px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  padding:70px 7%;
-  background:
-    linear-gradient(90deg,rgba(6,20,38,.97) 0%,rgba(6,20,38,.85) 45%,rgba(6,20,38,.25) 100%),
-    url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80');
-  background-size:cover;
-  background-position:center;
+min-height:700px;
+display:flex;
+align-items:center;
+padding:0 7%;
+background:
+linear-gradient(90deg,rgba(6,22,43,.93) 0%,rgba(6,22,43,.75) 45%,rgba(6,22,43,.25) 100%),
+url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+}
+
+.hero-box{
+max-width:700px;
 }
 
 .hero h1{
-  font-size:58px;
-  line-height:1.08;
-  margin:0 0 25px;
+font-size:72px;
+line-height:1.05;
+font-weight:800;
+margin-bottom:28px;
 }
 
-.hero h1 span{color:var(--gold2)}
+.hero span{
+color:var(--dourado);
+}
 
 .hero p{
-  color:var(--muted);
-  font-size:20px;
-  max-width:620px;
-  line-height:1.7;
+font-size:30px;
+line-height:1.6;
+color:var(--cinza);
+margin-bottom:35px;
 }
 
 .btn{
-  display:inline-block;
-  margin-top:28px;
-  background:linear-gradient(90deg,var(--gold),var(--gold2));
-  color:white;
-  padding:16px 28px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
+display:inline-block;
+padding:16px 28px;
+background:var(--dourado);
+color:white;
+text-decoration:none;
+font-weight:700;
+border-radius:8px;
 }
 
 section{
-  padding:85px 7%;
-}
-
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-
-.eyebrow{
-  color:var(--gold2);
-  text-transform:uppercase;
-  font-weight:700;
-  font-size:13px;
-  letter-spacing:1px;
+padding:90px 7%;
 }
 
 h2{
-  font-size:42px;
-  line-height:1.15;
-  margin:15px 0 25px;
+font-size:46px;
+margin-bottom:22px;
 }
 
 p{
-  color:var(--muted);
-  font-size:18px;
-  line-height:1.8;
+font-size:20px;
+line-height:1.8;
+color:var(--cinza);
 }
 
-.image-card{
-  min-height:330px;
-  border-radius:18px;
-  background:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80');
-  background-size:cover;
-  background-position:center;
-  box-shadow:0 30px 80px rgba(0,0,0,.35);
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:26px;
-  margin-top:45px;
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+margin-top:40px;
 }
 
 .card{
-  background:rgba(255,255,255,.045);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:18px;
-  padding:38px;
-  text-align:center;
-}
-
-.icon{
-  width:72px;
-  height:72px;
-  border:2px solid var(--gold);
-  border-radius:50%;
-  margin:0 auto 24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:34px;
-  color:var(--gold2);
+background:rgba(255,255,255,.04);
+padding:35px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,.08);
 }
 
 .card h3{
-  font-size:22px;
-  margin-bottom:14px;
-}
-
-.market{
-  background:
-    linear-gradient(90deg,rgba(6,20,38,.55),rgba(6,20,38,.95)),
-    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');
-  background-size:cover;
-  background-position:center;
-}
-
-.stats{
-  display:flex;
-  gap:40px;
-  margin-top:35px;
-  flex-wrap:wrap;
-}
-
-.stat{
-  color:var(--gold2);
-  font-weight:700;
-  font-size:18px;
+font-size:24px;
+margin-bottom:16px;
 }
 
 .cta{
-  background:#07182c;
-  border-top:1px solid rgba(255,255,255,.12);
-  border-bottom:1px solid rgba(255,255,255,.12);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:30px;
+background:#081a31;
+text-align:center;
 }
 
 footer{
-  padding:35px 7%;
-  display:flex;
-  justify-content:space-between;
-  color:#9fb0c4;
-  font-size:14px;
+padding:30px 7%;
+text-align:center;
+font-size:14px;
+color:#8ea1b8;
 }
 
-@media(max-width:900px){
-  header,footer,.cta{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+@media(max-width:980px){
 
-  nav{
-    margin-top:20px;
-  }
-
-  nav a{
-    display:block;
-    margin:12px 0;
-  }
-
-  .hero,.grid-2{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:42px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
+header{
+flex-direction:column;
+align-items:flex-start;
 }
+
+nav{
+margin-top:18px;
+display:flex;
+flex-direction:column;
+gap:12px;
+}
+
+nav a{
+margin:0;
+}
+
+.hero{
+min-height:auto;
+padding:80px 7%;
+}
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:22px;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">LEGAC<span>Y</span></div>
-  <nav>
-    <a href="#inicio">INÍCIO</a>
-    <a href="#quem-somos">QUEM SOMOS</a>
-    <a href="#fazemos">O QUE FAZEMOS</a>
-    <a href="#contato" class="btn-outline">FALE CONOSCO</a>
-  </nav>
+
+<img src="Logo2.png" alt="Legacy">
+
+<nav>
+<a href="#inicio">INÍCIO</a>
+<a href="#sobre">QUEM SOMOS</a>
+<a href="#servicos">O QUE FAZEMOS</a>
+<a href="#contato" class="botao">FALE CONOSCO</a>
+</nav>
+
 </header>
 
-<main id="inicio">
+<section class="hero" id="inicio">
 
-<section class="hero">
-  <div>
-    <h1>TRANSFORMAMOS TALENTOS EM <span>LEGADOS DE SUCESSO.</span></h1>
-    <p>
-      Prospectamos, desenvolvemos e impulsionamos profissionais para alta performance no mercado de seguros.
-    </p>
-    <a class="btn" href="#quem-somos">CONHEÇA A LEGACY →</a>
-  </div>
+<div class="hero-box">
+
+<h1>
+TRANSFORMAMOS<br>
+TALENTOS EM<br>
+<span>LEGADOS DE SUCESSO.</span>
+</h1>
+
+<p>
+Prospectamos, desenvolvemos e impulsionamos profissionais para alta performance no mercado de seguros.
+</p>
+
+<a href="#sobre" class="btn">CONHEÇA A LEGACY</a>
+
+</div>
+
 </section>
 
-<section id="quem-somos">
-  <div class="grid-2">
-    <div>
-      <div class="eyebrow">Quem somos</div>
-      <h2>Desenvolvemos pessoas. Impulsionamos carreiras.</h2>
-      <p>
-        A Legacy é uma unidade de negócios especializada em prospectar, selecionar, capacitar, treinar e acompanhar novos talentos para atuação no mercado de seguros.
-      </p>
-      <p>
-        Nosso propósito é criar um ecossistema de crescimento contínuo, gerando oportunidades reais e construindo carreiras sólidas e duradouras.
-      </p>
-    </div>
-    <div class="image-card"></div>
-  </div>
+<section id="sobre">
+
+<h2>Quem Somos</h2>
+
+<p>
+A Legacy é uma unidade de negócios especializada em prospectar, selecionar, capacitar, treinar e acompanhar novos talentos para atuação no mercado de seguros.
+</p>
+
+<p style="margin-top:18px;">
+Nosso propósito é criar oportunidades reais, desenvolver carreiras sólidas e gerar crescimento contínuo.
+</p>
+
 </section>
 
-<section id="fazemos">
-  <div style="text-align:center;">
-    <div class="eyebrow">O que fazemos</div>
-    <h2>Nosso processo, seu crescimento.</h2>
-  </div>
+<section id="servicos">
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">👥</div>
-      <h3>Prospecção de Talentos</h3>
-      <p>Identificamos profissionais com perfil comercial, visão de futuro e potencial para se destacar no mercado.</p>
-    </div>
+<h2>O que fazemos</h2>
 
-    <div class="card">
-      <div class="icon">🎓</div>
-      <h3>Capacitação</h3>
-      <p>Oferecemos treinamento técnico e comportamental para formar corretores preparados para vencer.</p>
-    </div>
+<div class="grid">
 
-    <div class="card">
-      <div class="icon">📈</div>
-      <h3>Alta Performance</h3>
-      <p>Acompanhamos de perto cada profissional, com foco em produtividade, resultados e desenvolvimento contínuo.</p>
-    </div>
-  </div>
+<div class="card">
+<h3>Prospecção</h3>
+<p>Identificamos profissionais com perfil comercial e alto potencial.</p>
+</div>
+
+<div class="card">
+<h3>Capacitação</h3>
+<p>Treinamento técnico e comportamental para formação de excelência.</p>
+</div>
+
+<div class="card">
+<h3>Performance</h3>
+<p>Acompanhamento contínuo focado em produtividade e resultados.</p>
+</div>
+
+</div>
+
 </section>
 
-<section class="market">
-  <div class="grid-2">
-    <div></div>
-    <div>
-      <div class="eyebrow">Conexão com o mercado</div>
-      <h2>Conectamos talentos ao que realmente importa.</h2>
-      <p>
-        Atuamos dentro de um ecossistema sólido do mercado segurador, promovendo desenvolvimento profissional, geração de valor e visão de longo prazo.
-      </p>
+<section class="cta" id="contato">
 
-      <div class="stats">
-        <div class="stat">+ Talentos conectados</div>
-        <div class="stat">+ Parceiros estratégicos</div>
-        <div class="stat">Foco em resultados e pessoas</div>
-      </div>
-    </div>
-  </div>
+<h2>Fale Conosco</h2>
+
+<p>
+Quer conhecer a Legacy ou novas oportunidades?
+</p>
+
+<p style="margin-top:20px;">
+<a href="mailto:gustavo.lima@legacyml.com.br" class="btn">ENVIAR E-MAIL</a>
+</p>
+
 </section>
-
-<section id="contato" class="cta">
-  <div>
-    <div class="eyebrow">Fale conosco</div>
-    <h2>Vamos construir o próximo legado juntos?</h2>
-    <p>Entre em contato e descubra oportunidades para crescer com a Legacy.</p>
-  </div>
-  <a class="btn" href="mailto:gustavo.lima@legacyml.com.br">ENVIAR E-MAIL</a>
-</section>
-
-</main>
 
 <footer>
-  <div>LEGACY</div>
-  <div>© 2026 Legacy — Todos os direitos reservados.</div>
+© 2026 Legacy. Todos os direitos reservados.
 </footer>
 
 </body>
