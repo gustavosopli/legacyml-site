@@ -186,7 +186,84 @@ grid-template-columns:1fr;
 }
 
 }
+.sobre-section{
+    padding:100px 7%;
+    background:
+        radial-gradient(circle at 15% 40%, rgba(216,154,50,.08), transparent 30%),
+        linear-gradient(135deg,#06162b 0%,#081d36 100%);
+}
 
+.sobre-grid{
+    max-width:1500px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:100px;
+    align-items:start;
+}
+
+.sobre-titulo{
+    padding-top:5px;
+}
+
+.eyebrow{
+    display:block;
+    color:var(--dourado);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.sobre-titulo h2{
+    font-size:44px;
+    line-height:1.1;
+    margin:0;
+}
+
+.linha-dourada{
+    width:70px;
+    height:3px;
+    background:var(--dourado);
+    margin-top:25px;
+}
+
+.sobre-conteudo p{
+    font-size:18px;
+    line-height:1.7;
+    color:var(--cinza);
+    max-width:760px;
+    margin-bottom:20px;
+}
+
+.manifesto{
+    margin-top:35px;
+    padding-left:25px;
+    border-left:3px solid var(--dourado);
+    font-size:20px;
+    line-height:1.65;
+    color:white;
+}
+
+.manifesto strong{
+    color:var(--dourado);
+}
+
+@media(max-width:980px){
+
+    .sobre-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .sobre-section{
+        padding:70px 7%;
+    }
+
+    .sobre-titulo h2{
+        font-size:36px;
+    }
+}
 </style>
 </head>
 
@@ -225,20 +302,42 @@ Prospectamos, desenvolvemos e impulsionamos profissionais para alta performance 
 
 </section>
 
-<section id="sobre">
+<section id="sobre" class="sobre-section">
 
-<h2>Quem Somos</h2>
+  <div class="sobre-grid">
 
-<p>
-A Legacy é uma unidade de negócios especializada em prospectar, selecionar, capacitar, treinar e acompanhar novos talentos para atuação no mercado de seguros.
-</p>
+    <div class="sobre-titulo">
+      <span class="eyebrow">NOSSA ESSÊNCIA</span>
+      <h2>Quem Somos</h2>
 
-<p style="margin-top:18px;">
-Nosso propósito é criar oportunidades reais, desenvolver carreiras sólidas e gerar crescimento contínuo.
-</p>
+      <div class="linha-dourada"></div>
+    </div>
+
+    <div class="sobre-conteudo">
+
+      <p>
+        A Legacy é uma unidade de negócios especializada em identificar,
+        selecionar e desenvolver profissionais para uma carreira de alta
+        performance no mercado de seguros.
+      </p>
+
+      <p>
+        Criamos oportunidades reais para profissionais que buscam autonomia,
+        desenvolvimento e crescimento, combinando formação estruturada,
+        acompanhamento próximo e uma cultura orientada a resultados.
+      </p>
+
+      <div class="manifesto">
+        Selecionamos potencial.<br>
+        Desenvolvemos competência.<br>
+        <strong>Construímos performance.</strong>
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
-
 <section id="servicos">
 
 <h2>O que fazemos</h2>
